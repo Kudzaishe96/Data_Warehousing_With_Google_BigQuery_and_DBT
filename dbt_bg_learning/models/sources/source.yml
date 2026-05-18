@@ -4,7 +4,7 @@ sources:
   - name: dbt_learn  # The unique logical name used to call the source
     database: dbtlearning-496616      # Your physical data warehouse database name
     schema: dbt_learn   # Your physical schema name in the warehouse
-    description: "Raw data from our e-commerce platform application database."
+    description: "Raw data in the dbt_learn dataset, sourced from BigQuery public datasets."
     
     tables:
       - name: customers
