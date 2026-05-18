@@ -1,0 +1,16 @@
+version: 2
+
+sources:
+  - name: dbt_learn  # The unique logical name used to call the source
+    database: dbtlearning-496616      # Your physical data warehouse database name
+    schema: dbt_learn   # Your physical schema name in the warehouse
+    description: "Raw data from our e-commerce platform application database."
+    
+    tables:
+      - name: customers
+        description: "One row per customer account."
+        columns:
+          - name: cst_id
+            data_tests:
+              - unique
+              - not_null

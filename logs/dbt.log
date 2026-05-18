@@ -1,0 +1,29 @@
+[0m04:47:35.210244 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001E53493A510>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001E53258CF50>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001E536D93C50>]}
+
+
+============================== 04:47:35.447093 | 2109f515-bc10-42aa-9359-59d2b1174bb2 ==============================
+[0m04:47:35.447093 [info ] [MainThread]: Running with dbt=1.11.10
+[0m04:47:35.448580 [debug] [MainThread]: running dbt with arguments {'version_check': 'True', 'no_print': 'None', 'static_parser': 'True', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'target_path': 'None', 'printer_width': '80', 'write_json': 'True', 'empty': 'None', 'log_cache_events': 'False', 'introspect': 'True', 'cache_selected_only': 'False', 'fail_fast': 'False', 'debug': 'False', 'log_format': 'default', 'profiles_dir': 'C:\\Users\\Kudzie\\.dbt', 'send_anonymous_usage_stats': 'True', 'quiet': 'False', 'warn_error': 'None', 'partial_parse': 'True', 'invocation_command': 'dbt init', 'indirect_selection': 'eager', 'use_colors': 'True', 'use_experimental_parser': 'False', 'log_path': 'logs'}
+[0m04:48:12.043168 [debug] [MainThread]: Starter project path: C:\Users\Kudzie\Desktop\VS_CODE\Projects\dbt_bigquery\.venv\Lib\site-packages\dbt\include\starter_project
+[0m04:48:12.174195 [info ] [MainThread]: 
+Your new dbt project "dbt_bg_learning" was created!
+
+For more information on how to configure the profiles.yml file,
+please consult the dbt documentation here:
+
+  https://docs.getdbt.com/docs/configure-your-profile
+
+One more thing:
+
+Need help? Don't hesitate to reach out to us via GitHub issues or on Slack:
+
+  https://community.getdbt.com/
+
+Happy modeling!
+
+[0m04:48:12.175389 [info ] [MainThread]: Setting up your profile.
+[0m05:00:51.147399 [info ] [MainThread]: Profile dbt_bg_learning written to C:\Users\Kudzie\.dbt\profiles.yml using target's profile_template.yml and your supplied values. Run 'dbt debug' to validate the connection.
+[0m05:00:51.368805 [debug] [MainThread]: Command `dbt init` succeeded at 05:00:51.365020 after 796.62 seconds
+[0m05:00:51.391900 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001E5417CBCE0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001E536E3A8D0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001E54179A8B0>]}
+[0m05:00:51.406913 [debug] [MainThread]: Flushing usage events
+[0m05:00:53.666551 [debug] [MainThread]: An error was encountered while trying to flush usage events
