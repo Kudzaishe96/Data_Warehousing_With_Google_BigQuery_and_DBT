@@ -1,0 +1,14 @@
+
+version: 2
+
+models:
+  - name: bronze_customers
+    description: "This is the first layer of our data pipeline, where we pull in raw data from our source and perform basic transformations to clean and standardize it."
+    columns:
+      - name: cst_id
+        description: "The primary key for this table"
+        data_tests:
+          - unique
+          - not_null
+
+  
