@@ -1,3 +1,10 @@
+
+{{
+  config(
+    materialized = 'table',
+    schema = 'silver'
+    )
+}}
 WITH clean_customer_bronze AS(
     SELECT
 			cst_id,
