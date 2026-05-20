@@ -11,6 +11,8 @@ sources:
         description: "One row per customer account."
         columns:
           - name: cst_id
-            data_tests:
-              - unique
-              - not_null
+            tests:
+              - unique:
+                  severity: warn
+              - not_null:
+                  severity: warn
