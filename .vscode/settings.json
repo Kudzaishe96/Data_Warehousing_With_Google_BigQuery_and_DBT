@@ -1,3 +1,5 @@
 {
-    "dbt.perspectiveTheme": "Pro Dark"
+    "dbt.perspectiveTheme": "Pro Dark",
+    "dbt.dbtPythonPathOverride": "C:\\Users\\gabri\\Desktop\\Github Repos\\DBT\\dbt_bigquery\\.venv\\Scripts\\python.exe",
+    "dbt.queryLimit": 50
 }

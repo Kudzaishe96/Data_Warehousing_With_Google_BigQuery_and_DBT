@@ -1,0 +1,27 @@
+data_warehouse:
+  outputs:
+    dev:
+      dataset: dbt_learn
+      job_execution_timeout_seconds: 150
+      job_retries: 1
+      location: africa-south1
+      method: oauth
+      priority: interactive
+      project: dbtlearning-496616
+      threads: 1
+      type: bigquery
+  target: dev
+
+dbt_bg_learning:
+  outputs:
+    dev:
+      dataset: dbt_learn 
+      job_execution_timeout_seconds: 150
+      job_retries: 1
+      location: africa-south1
+      method: oauth
+      priority: interactive
+      project: dbtlearning-496616
+      threads: 1
+      type: bigquery
+  target: dev

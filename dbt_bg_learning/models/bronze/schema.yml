@@ -1,4 +1,3 @@
-
 version: 2
 
 models:
@@ -7,8 +6,26 @@ models:
     columns:
       - name: cst_id
         description: "The primary key for this table"
-        data_tests:
+        tests:
+          - unique
+          - not_null
+  - name: silver_customers
+    description: "This is the first layer of our data pipeline, where we pull in raw data from our source and perform basic transformations to clean and standardize it."
+    columns:
+      - name: cst_id
+        description: "The primary key for this table"
+        tests:
           - unique
           - not_null
 
-  
+      - name: cst_marital_status
+        description: "Customer marital status"
+        tests:
+          - accepted_values:
+              values: ["Married", "Single", "n/a"]
+
+      - name: cst_gndr
+        description: "Customer gender"
+        tests:
+          - accepted_values:
+              values: ["Male", "Female"]
