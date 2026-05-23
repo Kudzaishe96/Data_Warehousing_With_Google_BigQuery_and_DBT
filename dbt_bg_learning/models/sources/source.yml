@@ -11,8 +11,146 @@ sources:
         description: "One row per customer account."
         columns:
           - name: cst_id
-            tests:
+            # --- UPDATED MODERN SYNTAX ---
+            tests: 
               - unique:
-                  severity: warn
+                  config:
+                    severity: warn
               - not_null:
-                  severity: warn
+                  config:
+                    severity: warn
+
+  - name: gcs_landing #---Name for data source when calling the database using source function
+    database: dbtlearning-496616 #---project_id
+    schema: raw_staging           #--- dataset
+    tables:
+      - name: ext_cust_info
+        description: "External table mapping to customer landing CSVs in GCS"
+        
+        # --- FIXED ALIGNMENT FOR BIGQUERY ---
+        external:
+          options:
+            format: 'CSV' # Move this inside options
+            uris: ['gs://africa-data-sources1/source_crm/customers_crm/cust_info*.csv']
+            skip_leading_rows: 1
+            field_delimiter: ','
+            quote: '"'
+            
+        columns:
+          - name: cst_id
+            data_type: STRING
+          - name: cst_key
+            data_type: STRING
+          - name: cst_firstname
+            data_type: STRING
+          - name: cst_lastname
+            data_type: STRING
+          - name: cst_marital_status
+            data_type: STRING
+          - name: cst_gndr
+            data_type: STRING
+          - name: cst_create_date
+            data_type: STRING
+
+      - name: ext_prd_info
+        description: "External table mapping to customer landing CSVs in GCS"
+        
+        # --- FIXED ALIGNMENT FOR BIGQUERY ---
+        external:
+          options:
+            format: 'CSV' # Move this inside options
+            uris: ['gs://africa-data-sources1/source_crm/products_crm/prd_info*.csv']
+            skip_leading_rows: 1
+            field_delimiter: ','
+            quote: '"'
+  
+        columns:
+          - name: prd_id
+            data_type: STRING
+          - name: prd_key
+            data_type: STRING
+          - name: prd_nm
+            data_type: STRING
+          - name: prd_cost
+            data_type: STRING
+          - name: prd_line
+            data_type: STRING
+          - name: prd_start_dt
+            data_type: STRING
+          - name: prd_end_dt
+            data_type: STRING
+
+      - name: ext_sales
+        description: "External table mapping to customer landing CSVs in GCS"
+        
+        # --- FIXED ALIGNMENT FOR BIGQUERY ---
+        external:
+          options:
+            format: 'CSV' # Move this inside options
+            uris: ['gs://africa-data-sources1/source_crm/sales_crm/sales_crm*.csv']
+            skip_leading_rows: 1
+            field_delimiter: ','
+            quote: '"'
+  
+        columns:
+          - name: sls_ord_num
+            data_type: STRING
+          - name: sls_prd_key
+            data_type: STRING
+          - name: sls_cust_id
+            data_type: STRING
+          - name: sls_order_dt
+            data_type: STRING
+          - name: sls_ship_dt
+            data_type: STRING
+          - name: sls_due_dt
+            data_type: STRING
+          - name: sls_sales
+            data_type: STRING
+          - name: sls_quantity
+            data_type: STRING
+          - name: sls_price
+            data_type: STRING
+
+      - name: ext_erp_products
+        description: "External table mapping to customer landing CSVs in GCS"
+        
+        # --- FIXED ALIGNMENT FOR BIGQUERY ---
+        external:
+          options:
+            format: 'CSV' # Move this inside options
+            uris: ['gs://africa-data-sources1/source_erp/products_erp/PX_CAT_G1V2*.csv']
+            skip_leading_rows: 1
+            field_delimiter: ','
+            quote: '"'
+  
+        columns:
+          - name: CID
+            data_type: STRING
+          - name: CNTRY
+            data_type: STRING
+          - name: SUBCAT
+            data_type: STRING
+          - name: MAINTENANCE
+            data_type: STRING
+
+      - name: ext_location
+        description: "External table mapping to customer landing CSVs in GCS"
+        
+        # --- FIXED ALIGNMENT FOR BIGQUERY ---
+        external:
+          options:
+            format: 'CSV' # Move this inside options
+            uris: ['gs://africa-data-sources1/source_erp/location_erp/LOC_A101*.csv']
+            skip_leading_rows: 1
+            field_delimiter: ','
+            quote: '"'
+  
+        columns:
+          - name: CID
+            data_type: STRING
+          - name: CNTRY
+            data_type: STRING
+          
+
+

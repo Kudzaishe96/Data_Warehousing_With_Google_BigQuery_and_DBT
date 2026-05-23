@@ -1,0 +1,7 @@
+﻿cst_id,cst_key,cst_firstname,cst_lastname,cst_marital_status,cst_gndr,cst_create_date,location
+11000,AW00011000, Jon,Yang ,S,F,10/6/2025,RSA
+11001,AW00011001,Eugene,Huang  ,S,F,10/6/2025,SA
+11002,AW00011002,Ruben, Torres,M,F,10/6/2025,ZIM
+11003,AW00011003,Christy,  Zhu,S,F,10/6/2025,ZAM
+11004,AW00011004, Elizabeth,Johnson,S,M,10/6/2025,REG
+11005,AW00011005,Julio,Ruiz,S,F,10/6/2025,NIG

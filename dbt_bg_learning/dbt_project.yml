@@ -1,4 +1,3 @@
-
 # Name your project! Project names should contain only lowercase characters
 # and underscores. A good package name should reflect your organization's
 # name or the intended use of these models
@@ -9,8 +8,6 @@ version: '1.0.0'
 profile: 'dbt_bg_learning'
 
 # These configurations specify where dbt should look for different types of files.
-# The `model-paths` config, for example, states that models in this project can be
-# found in the "models/" directory. You probably won't need to change these!
 model-paths: ["models"]
 analysis-paths: ["analyses"]
 test-paths: ["tests"]
@@ -22,21 +19,20 @@ clean-targets:         # directories to be removed by `dbt clean`
   - "target"
   - "dbt_packages"
 
-
 # Configuring models
-# Full documentation: https://docs.getdbt.com/docs/configuring-models
-
-# In this example config, we tell dbt to build all models in the example/
-# directory as views. These settings can be overridden in the individual model
-# files using the `{{ config(...) }}` macro.
 models:
   dbt_bg_learning:
-    # Config indicated by + and applies to all files under models/example/
-    example:
-      +materialized: view
+    
+    # --- BRONZE LAYER ---
     bronze:
       +schema: bronze
-      +materialized: table
+      +materialized: table # Raw ingested source data structured into base tables
+
+    # --- SILVER LAYER ---
     silver:
-      +schema: silvers
-      +materialized: table
+      +schema: silver      # Fixed the typo from 'silvers' to 'silver' to match your model specs
+
+    # --- GOLD / MARTS LAYER (Added for completeness!) ---
+    gold:
+      +schema: gold
+      +materialized: table # Analytical dimensions/facts optimized for Power BI
