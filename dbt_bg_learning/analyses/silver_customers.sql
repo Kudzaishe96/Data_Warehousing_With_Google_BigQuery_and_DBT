@@ -5,7 +5,7 @@
     schema = 'silver'
     )
 }}
-WITH clean_customer_bronze AS(
+/* WITH clean_customer_bronze AS(
     SELECT
 			cst_id,
 			cst_key,
@@ -23,7 +23,7 @@ WITH clean_customer_bronze AS(
 			END AS cst_gndr, -- Normalize gender values to readable format
 			cst_create_date
         FROM
-        {{ ref('bronze_customers') }}   
+        {{ ref('bronze_customer') }}   
 )   
 
 SELECT *
