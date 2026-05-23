@@ -125,13 +125,31 @@ sources:
             quote: '"'
   
         columns:
-          - name: ID
+          - name: CID
             data_type: STRING
-          - name: CAT
+          - name: CNTRY
             data_type: STRING
           - name: SUBCAT
             data_type: STRING
           - name: MAINTENANCE
+            data_type: STRING
+
+      - name: ext_location
+        description: "External table mapping to customer landing CSVs in GCS"
+        
+        # --- FIXED ALIGNMENT FOR BIGQUERY ---
+        external:
+          options:
+            format: 'CSV' # Move this inside options
+            uris: ['gs://africa-data-sources1/source_erp/location_erp/LOC_A101*.csv']
+            skip_leading_rows: 1
+            field_delimiter: ','
+            quote: '"'
+  
+        columns:
+          - name: CID
+            data_type: STRING
+          - name: CNTRY
             data_type: STRING
           
 

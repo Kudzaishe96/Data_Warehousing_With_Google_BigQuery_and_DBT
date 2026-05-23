@@ -40,4 +40,6 @@ SELECT
 FROM ranked_customers
 WHERE row_num = 1
 
+
+
 {% endsnapshot %}

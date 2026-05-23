@@ -43,6 +43,7 @@ WITH cleaned_history AS (
 
     FROM {{ ref('customer_snapshot') }}
     WHERE customer_id IS NOT NULL
+    
 )
 
 SELECT * FROM cleaned_history

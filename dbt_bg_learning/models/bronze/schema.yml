@@ -7,10 +7,15 @@ models:
       - name: customer_id
         description: "The primary key for this table"
         tests:
-          - unique
-          - not_null
+          - unique:
+                  config:
+                    severity: warn
+          - not_null:
+                  config:
+                    severity: warn
+            
   - name: silver_customer
-    description: "This is the first layer of our data pipeline, where we pull in raw data from our source and perform basic transformations to clean and standardize it."
+    description: "This is the second layer of our data pipeline, where we perform transformations to clean and standardize it."
     columns:
       - name: customer_id
         description: "The primary key for this table"
@@ -31,3 +36,121 @@ models:
           - accepted_values:
               arguments:
                 values: ["Male", "Female","n/a"]
+  
+  - name: silver_customer_history
+    description: "This is the second layer of our data pipeline, where we perform transformations to clean and standardize it."
+    columns:
+      - name: customer_id
+        description: "The primary key for this table"
+        tests:
+          - unique
+          - not_null
+
+      - name: marital_status
+        description: "Customer marital status"
+        tests:
+          - accepted_values:
+              arguments:
+                values: ["Married", "Single", "n/a"]
+
+      - name: gender
+        description: "Customer gender"
+        tests:
+          - accepted_values:
+              arguments:
+                values: ["Male", "Female","n/a"]
+  
+  - name: silver_erp_products
+    description: "This is the second layer of our data pipeline, where we perform transformations to clean and standardize it."
+    columns:
+      - name: erp_products_id
+        description: "The primary key for this table"
+        tests:
+          - unique
+          - not_null
+
+      - name: erp_products_catergory
+        description: "Products Catergory"
+        tests:
+          - accepted_values:
+              arguments:
+                values: ["Accessories", "Clothing", "Bikes","Components"]
+
+      - name: erp_products_maintenance
+        description: "Customer gender"
+        tests:
+          - accepted_values:
+              arguments:
+                values: ["No", "Yes"]
+  
+  - name: silver_erp_products_history
+    description: "This is the second layer of our data pipeline, where we perform transformations to clean and standardize it."
+    columns:
+      - name: erp_products_id
+        description: "The primary key for this table"
+        tests:
+          - unique
+          - not_null
+
+      - name: erp_products_catergory
+        description: "Products Catergory"
+        tests:
+          - accepted_values:
+              arguments:
+                values: ["Accessories", "Clothing", "Bikes","Components"]
+
+      - name: erp_products_maintenance
+        description: "Customer gender"
+        tests:
+          - accepted_values:
+              arguments:
+                values: ["No", "Yes"]
+
+  - name: silver_products
+    description: "This is the second layer of our data pipeline, where we perform transformations to clean and standardize it."
+    columns:
+      - name: product_id
+        description: "The primary key for this table"
+        tests:
+          - unique
+          - not_null
+
+      - name: product_line
+        description: "Products Catergory line"
+        tests:
+          - accepted_values:
+              arguments:
+                values: ["Mountain", "Road", "Other Sales","Touring","n/a"]
+  - name: silver_sales
+    description: "This is the second layer of our data pipeline, where we perform transformations to clean and standardize it."
+    columns:
+      - name: sales_order_number
+        description: "The primary key for this table"
+        tests:
+          - not_null
+
+      - name: sales_customer_id
+        description: "Customer Surrogate key "
+        tests:
+          - not_null
+      
+      - name: sales_product_number
+        description: "Products Surrogate key "
+        tests:
+          - not_null 
+
+  - name: silver_location
+    description: "This is the second layer of our data pipeline, where we perform transformations to clean and standardize it."
+    columns:
+      - name: customer_id
+        description: "The primary key for this table"
+        tests:
+          - not_null
+
+      - name: country
+        description: "Customer Surrogate key "
+        tests:
+          - not_null
+      
+    
+

@@ -22,11 +22,7 @@ clean-targets:         # directories to be removed by `dbt clean`
 # Configuring models
 models:
   dbt_bg_learning:
-    # --- STAGING LAYER ---
-    staging:
-      +schema: stage
-      +materialized: view  # Staging models are best kept as lightweight views
-
+    
     # --- BRONZE LAYER ---
     bronze:
       +schema: bronze
