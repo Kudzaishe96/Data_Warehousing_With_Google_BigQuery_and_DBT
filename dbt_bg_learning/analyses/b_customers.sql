@@ -30,4 +30,4 @@ SELECT DISTINCT
        cst_create_date
 FROM ranked
 WHERE flag = 1
---ORDER BY cst_id, cst_create_date ASC
+--ORDER BY cst_id, cst_create_date ASC dgsg
