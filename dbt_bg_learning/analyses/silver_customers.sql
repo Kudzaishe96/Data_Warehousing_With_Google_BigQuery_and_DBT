@@ -29,6 +29,6 @@
 SELECT *
 FROM 
 clean_customer_bronze
-ORDER BY cst_id,cst_create_date ASC
+ORDER BY cst_id,cst_create_date ASC sjs
 
 
