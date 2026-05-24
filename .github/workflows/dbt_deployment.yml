@@ -20,6 +20,10 @@ jobs:
   deploy-dev:
     runs-on: ubuntu-latest
     environment: development
+
+    defaults:
+      run:
+        working-directory: ./dbt_bg_learning
     
     steps:
       - name: Checkout repository
