@@ -14,7 +14,7 @@ permissions:
 
 env:
   FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
-  DBT_PROFILES_DIR: ${{ github.workspace }}
+  DBT_PROFILES_DIR: ${{ github.workspace }}/dbt_bg_learning
 
 jobs:
   deploy-dev:
@@ -56,6 +56,21 @@ jobs:
 
       - name: Install dbt packages
         run: dbt deps
+        
+      - name: Inspect Profiles File
+        run: |
+          echo "=== Where am I working? ==="
+          pwd
+          
+          echo "=== What files are in this directory? ==="
+          ls -la
+          
+          echo "=== Printing the actual contents of profiles.yml ==="
+          if [ -f profiles.yml ]; then
+            cat profiles.yml
+          else
+            echo "ERROR: profiles.yml does not exist in this directory!"
+          fi
 
       - name: Run dbt Models
         run: dbt run --target dev
