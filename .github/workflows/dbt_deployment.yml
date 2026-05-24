@@ -1,0 +1,63 @@
+name: dbt_deployment
+
+on:
+  push:
+    branches:
+      - main
+    paths-ignore:
+      - '.github/**'
+
+# REQUIRED: Allows GitHub to mint the security token for GCP OAuth
+permissions:
+  contents: read
+  id-token: write
+
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+  DBT_PROFILES_DIR: ${{ github.workspace }}
+
+jobs:
+  deploy-dev:
+    runs-on: ubuntu-latest
+    environment: development
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      # --- GOOGLE OAUTH / WORKLOAD IDENTITY AUTHENTICATION ---
+      - name: Authenticate to Google Cloud via OAuth
+        uses: google-github-actions/auth@v2
+        with:
+          # Your exact workload identity provider string generated from your CLI
+          workload_identity_provider: 'projects/859751405458/locations/global/workloadIdentityPools/github-pool/providers/github-provider'
+          
+          # Your newly created service account email
+          service_account: 'dbt-runner-sa@dbtlearning-496616.iam.gserviceaccount.com'
+          
+          # Tells the runner to generate the secure OAuth token file in the background
+          create_credentials_file: true
+
+      - name: Set up Python
+        uses: actions/actions-setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: 'pip'
+          
+      - name: Install dependencies
+        run: |
+          pip install --upgrade pip
+          pip install dbt-bigquery
+          if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+
+      - name: Install dbt packages
+        run: dbt deps
+
+      - name: Run dbt Models
+        run: dbt run --target dev
+
+      - name: Run dbt Tests
+        run: dbt test --target dev
+
+      - name: Run Advanced Python Data Quality Checks
+        run: python data_quality_check.py
