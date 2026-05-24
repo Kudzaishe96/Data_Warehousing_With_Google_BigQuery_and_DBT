@@ -8,4 +8,4 @@ packages:
 # rub dbt deps for installing packages
 #dbt run-operation stage_external_sources --vars "ext_full_refresh: true" to create the table
 #dbt clean and then dbt deps 
-# 1 2 testing.
+# 1 2 testing
