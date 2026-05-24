@@ -16,7 +16,7 @@ With transformed_products_snapshot AS(
         SUBSTR(product_key, 7, LENGTH(product_key)) AS product_key,
         product_number,
         SPLIT(product_number, '-')[0] AS product_name,
-        SPLIT(product_number, '-')[1] AS product_colour,
+        SPLIT(product_number, '-')[0] AS product_colour,
         COALESCE(product_cost, 0) AS product_cost,
         CASE 
 				WHEN UPPER(TRIM(product_line)) = 'M' THEN 'Mountain'
