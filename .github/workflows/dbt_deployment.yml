@@ -39,7 +39,7 @@ jobs:
           create_credentials_file: true
 
       - name: Set up Python
-        uses: actions/actions-setup-python@v5
+        uses: actions/setup-python@v5          # <--- Fixed repository name
         with:
           python-version: '3.11'
           cache: 'pip'
