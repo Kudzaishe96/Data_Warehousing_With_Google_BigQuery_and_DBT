@@ -51,7 +51,7 @@ EMR and CMR Data csv files uploaded in the Data Source
 
 ### Data Cleaning (Silver Layer)
 1. Load data from snapshots for data lineage
-2. Use jinja functions ,macros and SQL for data Transformations ,data quality and intergrity
+2. Use jinja functions ,macros and SQL for data Transformations ,data quality and intergrity.
 3. Load silver tables to the silver schema.
    
 
