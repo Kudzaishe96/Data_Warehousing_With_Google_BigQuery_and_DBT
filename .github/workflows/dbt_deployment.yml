@@ -23,7 +23,7 @@ jobs:
 
     defaults:
       run:
-        working-directory: ./dbt_bg_learning
+        working-directory: ${{ github.workspace }}/dbt_bg_learning
     
     steps:
       - name: Checkout repository
