@@ -32,7 +32,7 @@ final_dimension as (
         d.country,
         c.customer_create_date,
         
-        -- 3. Audit Metadata preserved for backend support...
+        -- 3. Audit Metadata preserved for backend support.
         d.loaded_from_file,
         c.source_file_name AS crm_source_file_name,
         c.bronze_ingest_timestamp,
