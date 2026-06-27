@@ -1,10 +1,10 @@
-# END TO END ANALYTICS WITH GOOGLE BIGQUERY AND DBT 
-## ETL project using GOOGLE BIGQUERY AND DBT 
+# END TO END ANALYTICS WITH DATABRIKS AND DBT 
+## ETL project using DATABRICKS AND DBT 
 
 ## Table Of Contents
 
 - [ Project Overview ](#Project-Overview)
-- [ GOOGLE BIGQUERY & DBT Architecture ](#Azure-Data-Engineering-Synapse-Analytics-Architecture)
+- [ DATABRICKS & DBT Architecture ](#Azure-Data-Engineering-Synapse-Analytics-Architecture)
 - [ Data Source ](#Data-Source)
 - [ Tools ](#Tools)
 - [ Data Extraction (Bronze Layer) ](#Data-Extraction-(Bronze-Layer))
@@ -13,30 +13,22 @@
 
 
 ### Project Overview
-
-This project seek to show the extraction of raw data into meaningfull sql views for data analytics 
-
-
-## Google BigQuery & DBT Achitecture
-
-
+The use of Databricks in conjuction with DBT
 
 ### Data Source
 EMR and CMR Data csv files uploaded in the Data Source
 
 ### Tools
-- Google BigQuery
-- Google Cloud Storage
+- Databricks
 - DBT
 - Jinja Functions
 
-### Installation of DBT Core with Google BigQuery
+### Installation of DBT Core with Databricks
 1.Using VScode , download the following extensions dbt power and materilised icons.
 2.Download and install uv (pip install uv) and create a virtual environment (uv init ,uv sync).
-3.Instal DBT-Core  inside the virtual and name the project (dbt-core init  dbt-bigquery init)
-4.Download and Install Google CLI for authentification with DBT
-5.After installing dbt check for the profiles file and set the type to auoth
-6.Use command dbt debug to cornfirm connection.
+3.Instal DBT-Core  inside the virtual and name the project (dbt-core init  dbt-databricks init)
+4.After installing dbt check for the profiles file and set the type to auoth
+5.Use command dbt debug to cornfirm connection.
 
 ## Medallion Architecture
 
