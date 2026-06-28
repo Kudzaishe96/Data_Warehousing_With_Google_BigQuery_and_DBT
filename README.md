@@ -1,5 +1,5 @@
-# END TO END ANALYTICS WITH DATABRIKS AND DBT 
-## ETL project using DATABRICKS AND DBT 
+# END TO END ANALYTICS WITH GOOGLE BIGQUERY,GOOGLE CLOUD AND DBT 
+## ETL project using GOOGLE BIGQUERY,GOOGLE CLOUD AND DBT 
 
 ## Table Of Contents
 
@@ -13,20 +13,21 @@
 
 
 ### Project Overview
-The use of Databricks in conjuction with DBT
+The use of Google Cloud and Bigquery in conjuction with DBT
 
 ### Data Source
 EMR and CMR Data csv files uploaded in the Data Source
 
 ### Tools
-- Databricks
+- Google Cloud
+- Google Big Query
 - DBT
 - Jinja Functions
 
 ### Installation of DBT Core with Databricks
 1.Using VScode , download the following extensions dbt power and materilised icons.
 2.Download and install uv (pip install uv) and create a virtual environment (uv init ,uv sync).
-3.Instal DBT-Core  inside the virtual and name the project (dbt-core init  dbt-databricks init)
+3.Instal DBT-Core  inside the virtual and name the project (dbt-core init  dbt-bigquery init)
 4.After installing dbt check for the profiles file and set the type to auoth
 5.Use command dbt debug to cornfirm connection.
 
