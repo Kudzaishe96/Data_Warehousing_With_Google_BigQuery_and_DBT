@@ -25,11 +25,11 @@ EMR and CMR Data csv files uploaded in the Data Source
 - Jinja Functions
 
 ### Installation of DBT Core with Databricks
-1.Using VScode , download the following extensions dbt power and materilised icons.
-2.Download and install uv (pip install uv) and create a virtual environment (uv init ,uv sync).
-3.Instal DBT-Core  inside the virtual and name the project (dbt-core init  dbt-bigquery init)
-4.After installing dbt check for the profiles file and set the type to auoth
-5.Use command dbt debug to cornfirm connection.
+1. Using VScode , download the following extensions dbt power and materilised icons.
+2. Download and install uv (pip install uv) and create a virtual environment (uv init ,uv sync).
+3. Instal DBT-Core  inside the virtual and name the project (dbt-core init  dbt-bigquery init)
+4. After installing dbt check for the profiles file and set the type to auoth
+5. Use command dbt debug to cornfirm connection.
 
 ## Medallion Architecture
 
@@ -39,7 +39,7 @@ EMR and CMR Data csv files uploaded in the Data Source
 3. Load data using the bronze model (model/bronze) to the bronze schema while referring to external tables.
 
 ### Snapshots
-1.Create snapshots for all SCD 2 to use in the silver layer and keep history data
+1. Create snapshots for all SCD 2 to use in the silver layer and keep history data
 
 
 ### Data Cleaning (Silver Layer)
