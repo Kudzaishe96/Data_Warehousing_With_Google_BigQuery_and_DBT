@@ -13,10 +13,10 @@
 
 
 ### Project Overview
-The use of Google Cloud and Bigquery in conjuction with DBT
+Building a Medallion Architecture (Bronze/Silver/Gold) Data Warehouse ingesting CRM/ERP source data through Google Cloud Storage into BigQuery, using DBT for transformations, SCD Type 2 snapshotting, and Kimball dimensional modeling to produce analytics ready dimension and fact tables.
 
 ### Data Source
-EMR and CMR Data csv files uploaded in the Data Source
+EMR and CMR csv files uploaded in the Google Cloud Storage.
 
 ### Tools
 - Google Cloud
@@ -27,7 +27,7 @@ EMR and CMR Data csv files uploaded in the Data Source
 ### Installation of DBT Core with Databricks
 1. Using VScode , download the following extensions dbt power and materilised icons.
 2. Download and install uv (pip install uv) and create a virtual environment (uv init ,uv sync).
-3. Instal DBT-Core  inside the virtual and name the project (dbt-core init  dbt-bigquery init)
+3. Instal DBT-Core  inside the virtual environment and name the project (dbt-core init  dbt-bigquery init)
 4. After installing dbt check for the profiles file and set the type to auoth
 5. Use command dbt debug to cornfirm connection.
 
