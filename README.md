@@ -4,7 +4,7 @@
 ## Table Of Contents
 
 - [ Project Overview ](#Project-Overview)
-- [ DATABRICKS & DBT Architecture ](#Azure-Data-Engineering-Synapse-Analytics-Architecture)
+- [ GOOGLE BIGQUERY & DBT Architecture ](#)
 - [ Data Source ](#Data-Source)
 - [ Tools ](#Tools)
 - [ Data Extraction (Bronze Layer) ](#Data-Extraction-(Bronze-Layer))
@@ -24,7 +24,7 @@ EMR and CMR Data csv files uploaded in the Data Source
 - DBT
 - Jinja Functions
 
-### Installation of DBT Core with Databricks
+### Installation of DBT Core with Google Bigquery
 1. Using VScode , download the following extensions dbt power and materilised icons.
 2. Download and install uv (pip install uv) and create a virtual environment (uv init ,uv sync).
 3. Instal DBT-Core  inside the virtual and name the project (dbt-core init  dbt-bigquery init)
